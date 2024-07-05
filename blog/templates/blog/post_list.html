@@ -10,7 +10,10 @@
         <div>
             <h1><a href="">CherryBee's Blog2</a></h1>
         </div>
-
+        <div>
+            <h2>Test Text</h2>
+        </div>
+        {% autoescape off %}
         {% for post in posts %}
             <div>
                 <p>published: {{ post.published_date }}</p>
@@ -18,5 +21,6 @@
                 <p>{{ post.text|linebreaksbr }}</p>
             </div>
         {% endfor %}
+        {% endautoescape %}
     </body>
 </html>
