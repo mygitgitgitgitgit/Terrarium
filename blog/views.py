@@ -10,3 +10,5 @@ def post_list(request):
 
 def sub_html(request):
     return render(request, 'sub_html.html')
+def dev_html(request):
+    return render(request, 'dev_html.html')
