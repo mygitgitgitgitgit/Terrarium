@@ -7,7 +7,7 @@ on:
 jobs:
   deploy:
     if: github.event.pull_request.merged == true
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
       - name: Checkout repository
@@ -15,4 +15,7 @@ jobs:
 
       - name: Deploy to Server
         uses: appleboy/ssh-action@v0.1.5
-        
+      - name: Pull from Staging Branch to Local Server
+        run: | 
+            cd /Users/mycutemacbook/Project/Terrarium
+            git pull origin staging
